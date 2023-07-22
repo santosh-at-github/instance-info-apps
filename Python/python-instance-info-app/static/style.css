@@ -13,6 +13,16 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+.cpu-info-container {
+    background-color: #ffffff;
+    margin: 50px auto;
+    word-wrap: break-word;
+    float: center;
+    padding: 30px;
+    width: 80%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 h1 {
     color: #007bff;
     margin-bottom: 20px;

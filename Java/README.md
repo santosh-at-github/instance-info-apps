@@ -1,6 +1,6 @@
 # java-instance-info-app
 
-## Pre-requsite
+## Prerequisite
 1. Java 11+
 2. Maven 3.9.3+
 3. docker

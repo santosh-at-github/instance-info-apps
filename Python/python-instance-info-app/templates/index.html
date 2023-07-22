@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instance Info</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Instance Information</h1>
+        <ul>
+            <li>
+                <strong>Instance ID:</strong>
+                <span id="instance-id">{{ instance_id }}</span>
+            </li>
+            <li>
+                <strong>Instance Type:</strong>
+                <span id="instance-type">{{ instance_type }}</span>
+            </li>
+            <li>
+                <strong>Region:</strong>
+                <span id="region">{{ region }}</span>
+            </li>
+            <li>
+                <strong>Availability Zone:</strong>
+                <span id="availability-zone">{{ availability_zone }}</span>
+            </li>
+            <li>
+                <strong>CPU Architecture:</strong>
+                <span id="cpu-architecture">{{ cpu_architecture }}</span>
+            </li>
+        </ul>
+    </div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
+

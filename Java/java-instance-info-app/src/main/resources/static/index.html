@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Instance Information</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F3F5F8;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333333;
+            text-align: center;
+        }
+
+        .info {
+            margin-top: 30px;
+        }
+
+        .info pre {
+            white-space: pre-wrap;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #999999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Instance Information</h1>
+        <div class="info">
+            <pre><strong>Instance ID:</strong> <span id="instance-id"></span></pre>
+            <pre><strong>Instance Type:</strong> <span id="instance-type"></span></pre>
+            <pre><strong>Region:</strong> <span id="region"></span></pre>
+            <pre><strong>CPU Architecture:</strong> <span id="arch"></span></pre>
+            <pre><strong>Current Time:</strong> <span id="time"></span></pre>
+        </div>
+        <div class="footer">
+            Powered by Java and Spring Boot
+        </div>
+    </div>
+
+    <script>
+        // Fetch instance information from the server and update the HTML
+        fetch('/instance-info')
+            .then(response => response.text())
+            .then(data => {
+		const instanceInfo = data.split('<br>');
+                document.getElementById('instance-id').innerText = instanceInfo[0].replace('Instance ID: ', '');
+                document.getElementById('instance-type').innerText = instanceInfo[1].replace('Instance Type: ', '');
+                document.getElementById('region').innerText = instanceInfo[2].replace('Region: ', '');
+                document.getElementById('arch').innerText = instanceInfo[3].replace('CPU Architecture: ', '');
+                document.getElementById('time').innerText = instanceInfo[4].replace('Current Time: ', '');
+            });
+    </script>
+</body>
+</html>
+

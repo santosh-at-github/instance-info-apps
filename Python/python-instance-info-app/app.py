@@ -22,7 +22,7 @@ def get_instance_info():
     instance_type = get_instance_metadata("instance-type")
     region = get_instance_metadata("placement/availability-zone")[:-1]  # Remove the trailing AZ letter to get the region
     availability_zone = get_instance_metadata("placement/availability-zone")
-    cpu_architecture = platform.processor()
+    cpu_architecture = platform.machine()
 
     return render_template("index.html",
                            instance_id=instance_id,

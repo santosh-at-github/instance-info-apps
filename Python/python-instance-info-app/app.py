@@ -31,6 +31,17 @@ def get_instance_info():
                            availability_zone=availability_zone,
                            cpu_architecture=cpu_architecture)
 
+@app.route('/cpu-info')
+def cpu_info():
+    cpu_info_file = '/proc/cpuinfo'
+    try:
+        with open(cpu_info_file, 'r') as file:
+            cpu_info_content = file.read()
+    except Exception as e:
+        cpu_info_content = f"Error reading {cpu_info_file}: {e}"
+
+    return render_template("cpu_info.html", cpu_info_content=cpu_info_content)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=80)
 
